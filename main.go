@@ -3,5 +3,7 @@ package main
 func main() {
 	cards := newDeck()
 	cards = append(cards, "Joker")
-	cards.print()
+	hand, remainingDeck := deal(cards, 5)
+	hand.saveToFile("my_hand")
+	remainingDeck.saveToFile("my_remainingdeck")
 }
